@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文案 - 20260211</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            position: relative;
+        }
+        
+        .main-container {
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-top: 40px;
+        }
+        
+        .header h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        .content-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+        }
+        
+        .content-section:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .content-header {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .content-header h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .content-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .content-body {
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        
+        .content-body p {
+            margin-bottom: 20px;
+        }
+        
+        .media-container {
+            margin: 30px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.2);
+            min-height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .media-container img,
+        .media-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .media-placeholder {
+            text-align: center;
+            padding: 60px 20px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .media-placeholder i {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-primary {
+            background: #4f46e5;
+            border-color: #4f46e5;
+        }
+        
+        .btn-primary:hover {
+            background: #4338ca;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 32px;
+            }
+            
+            .content-section {
+                padding: 30px;
+            }
+            
+            .content-header h2 {
+                font-size: 24px;
+            }
+            
+            .content-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .media-container {
+                min-height: 200px;
+            }
+        }
+        
+        /* 无媒体时的样式调整 */
+        .no-media .content-body {
+            max-width: 100%;
+        }
+        
+        .no-media .media-container {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="header">
+            <h1>文案</h1>
+            <p>这里是文案展示页面，用于测试网页效果，文案内容由ai生成</p>
+        </div>
+        
+        <div class="content-section" id="contentSection">
+            <div class="content-header">
+                <h2>生活的艺术</h2>
+                <div class="content-meta">
+                    <span>作者：llw</span>
+                    <span>发布时间：2026-02-11</span>
+                </div>
+            </div>
+            
+            <div class="media-container" id="mediaContainer">
+                <div class="media-placeholder" id="mediaPlaceholder">
+                    <i>📷</i>
+                    <p>暂无媒体内容</p>
+                </div>
+                <!-- 图片接口 -->
+                <img id="contentImage" style="display: none;" alt="内容图片">
+                <!-- 视频接口 -->
+                <video id="contentVideo" style="display: none;" controls></video>
+            </div>
+            
+            <div class="content-body">
+                <p>生活是一门艺术，需要我们用心去感受和经营。在快节奏的现代社会中，我们常常忽略了生活的本质，迷失在各种琐事和压力之中。</p>
+                
+                <p>真正的生活艺术，不在于拥有多少物质财富，而在于如何在平凡中发现美好，在简单中创造幸福。它是清晨的一杯热茶，是午后的一段阅读时光，是傍晚与家人的温馨相聚。</p>
+                
+                <p>学会慢下来，欣赏沿途的风景，感受每一个当下的瞬间。不要总是为了未来而焦虑，也不要总是为了过去而遗憾。活在当下，珍惜现在，这才是生活的真谛。</p>
+                
+                <p>生活的艺术也在于接纳不完美。没有人的生活是一帆风顺的，我们都会遇到挫折和困难。重要的是如何面对这些挑战，如何在困境中保持乐观的心态。</p>
+                
+                <p>培养一些兴趣爱好，让生活变得更加丰富多彩。无论是绘画、音乐、摄影还是烹饪，这些爱好都能为我们的生活增添乐趣，让我们的心灵得到滋养。</p>
+                
+                <p>与人为善，传递正能量。生活中最美好的事情之一，就是能够为他人带来快乐和帮助。一个微笑，一句鼓励的话语，都能让这个世界变得更加美好。</p>
+                
+                <p>最后，记得要爱自己。只有懂得爱自己的人，才能真正地爱他人，才能真正地享受生活的美好。给自己一些空间和时间，做自己喜欢的事情，照顾好自己的身体和心灵。</p>
+                
+                <p>生活的艺术，就是在平凡中发现非凡，在简单中创造精彩。让我们用心去感受生活的美好，用爱去经营生活的每一天。</p>
+            </div>
+            
+            <div class="action-buttons">
+                <a href="welcome.html" class="btn">返回列表</a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 媒体管理功能
+        const contentSection = document.getElementById('contentSection');
+        const mediaContainer = document.getElementById('mediaContainer');
+        const mediaPlaceholder = document.getElementById('mediaPlaceholder');
+        const contentImage = document.getElementById('contentImage');
+        const contentVideo = document.getElementById('contentVideo');
+        
+        // 初始状态检查
+        function checkMediaStatus() {
+            if (contentImage.src && contentImage.src !== window.location.href) {
+                contentImage.style.display = 'block';
+                mediaPlaceholder.style.display = 'none';
+                mediaContainer.style.display = 'block';
+            } else if (contentVideo.src && contentVideo.src !== window.location.href) {
+                contentVideo.style.display = 'block';
+                mediaPlaceholder.style.display = 'none';
+                mediaContainer.style.display = 'block';
+            } else {
+                // 无媒体内容，隐藏媒体容器
+                mediaContainer.style.display = 'none';
+                contentSection.classList.add('no-media');
+            }
+        }
+        
+        // 页面加载时检查媒体状态
+        window.addEventListener('load', checkMediaStatus);
+    </script>
+</body>
+</html>
