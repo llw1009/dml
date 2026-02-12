@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文案 - 20260212</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            position: relative;
+        }
+        
+        .main-container {
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-top: 40px;
+        }
+        
+        .header h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        .content-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+        }
+        
+        .content-section:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .content-header {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .content-header h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .content-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .content-body {
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        
+        .content-body p {
+            margin-bottom: 20px;
+        }
+        
+        .media-container {
+            margin: 30px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.2);
+            min-height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .media-container img,
+        .media-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .media-placeholder {
+            text-align: center;
+            padding: 60px 20px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .media-placeholder i {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-primary {
+            background: #4f46e5;
+            border-color: #4f46e5;
+        }
+        
+        .btn-primary:hover {
+            background: #4338ca;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 32px;
+            }
+            
+            .content-section {
+                padding: 30px;
+            }
+            
+            .content-header h2 {
+                font-size: 24px;
+            }
+            
+            .content-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .media-container {
+                min-height: 200px;
+            }
+        }
+        
+        /* 无媒体时的样式调整 */
+        .no-media .content-body {
+            max-width: 100%;
+        }
+        
+        .no-media .media-container {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="header">
+            <h1>想你。</h1>
+            <p>喵喵喵，今日份想念</p>
+        </div>
+        
+        <div class="content-section" id="contentSection">
+            <div class="content-header">
+                <h2>想你...</h2>
+                <div class="content-meta">
+                    <span>作者：llw</span>
+                    <span>发布时间：2026-02-12</span>
+                </div>
+            </div>
+            
+            <div class="media-container" id="mediaContainer">
+                <div class="media-placeholder" id="mediaPlaceholder">
+                    <i>📷</i>
+                    <p>暂无媒体内容</p>
+                </div>
+                <!-- 图片接口 -->
+                <img id="contentImage" style="display: none;" alt="内容图片">
+                <!-- 视频接口 -->
+                <video id="contentVideo" src="20260212.mp4" controls></video>
+            </div>
+            
+            <div class="content-body">
+                <p>今天上午你打王者的时候，我看到你快结束时在那挂机，结算了还不出来</p>
+                
+                <p>我就有了一个猜想，因为你昨天说了，你今天可能只有晚上才能找我</p>
+                
+                <p>所以我怀疑是你手机被收了</p>
+                
+                <p>放心吧今天我过挺好的，没有乱想，都在想你</p>
+                
+                <p>爱你</p>
+                
+                <p>-竹苑llw</p>
+                
+                
+            </div>
+            
+            <div class="action-buttons">
+                <a href="welcome.html" class="btn">返回列表</a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 媒体管理功能
+        const contentSection = document.getElementById('contentSection');
+        const mediaContainer = document.getElementById('mediaContainer');
+        const mediaPlaceholder = document.getElementById('mediaPlaceholder');
+        const contentImage = document.getElementById('contentImage');
+        const contentVideo = document.getElementById('contentVideo');
+        
+        // 初始状态检查
+        function checkMediaStatus() {
+            // 显示视频，隐藏占位符
+            contentVideo.style.display = 'block';
+            mediaPlaceholder.style.display = 'none';
+            mediaContainer.style.display = 'block';
+            contentSection.classList.remove('no-media');
+        }
+        
+        // 页面加载时检查媒体状态
+        window.addEventListener('load', checkMediaStatus);
+    </script>
+</body>
+</html>
