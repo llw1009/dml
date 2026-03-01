@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>活动通知</title>
+    <title>文案 - 20260301</title>
     <style>
         * {
             margin: 0;
@@ -86,41 +86,35 @@
             margin-bottom: 20px;
         }
         
-        .event-info {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 25px;
+        .media-container {
             margin: 30px 0;
-            border-left: 4px solid #4f46e5;
-        }
-        
-        .event-info h3 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-        
-        .event-details {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .event-detail-item {
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.2);
+            min-height: 300px;
             display: flex;
-            flex-direction: column;
-            gap: 5px;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
         }
         
-        .event-detail-label {
-            font-size: 14px;
-            opacity: 0.8;
+        .media-container img,
+        .media-container video {
+            width: 100%;
+            height: auto;
+            display: block;
         }
         
-        .event-detail-value {
-            font-size: 16px;
-            font-weight: 500;
+        .media-placeholder {
+            text-align: center;
+            padding: 60px 20px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .media-placeholder i {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
         }
         
         .action-buttons {
@@ -185,58 +179,103 @@
                 gap: 10px;
             }
             
-            .event-details {
-                grid-template-columns: 1fr;
-            }
-            
             .action-buttons {
                 flex-direction: column;
             }
+            
+            .media-container {
+                min-height: 200px;
+            }
+        }
+        
+        /* 无媒体时的样式调整 */
+        .no-media .content-body {
+            max-width: 100%;
+        }
+        
+        .no-media .media-container {
+            display: none;
         }
     </style>
 </head>
 <body>
     <div class="main-container">
         <div class="header">
-            <h1>活动通知</h1>
- 
+            <h1>开学季</h1>
+            <p>喵喵喵，今日份想念</p>
         </div>
         
-        <div class="content-section">
+        <div class="content-section" id="contentSection">
             <div class="content-header">
-                <h2>活动通知</h2>
+                <h2>开学了[惊恐]</h2>
                 <div class="content-meta">
                     <span>作者：llw</span>
                     <span>发布时间：2026-03-01</span>
                 </div>
             </div>
             
-            <div class="content-body">
-                <p>亲爱的邓梦璐，我非常高兴地通知你</p>
-                
-                <p>此网页添加了新的内容，包括3月1日的文案页面</p>
-                
-                <div class="event-info">
-                    <h3>内容详情</h3>
-                    <div class="event-details">
-                        <div class="event-detail-item">
-                            <span class="event-detail-label">添加时间</span>
-                            <span class="event-detail-value">2026年3月1日 15:30</span>
-                        </div>
-                        <div class="event-detail-item">
-                            <span class="event-detail-label">添加内容</span>
-                            <span class="event-detail-value">WY_20260301.html</span>
-                        </div>
-                    </div>
+            <div class="media-container" id="mediaContainer">
+                <div class="media-placeholder" id="mediaPlaceholder">
+                    <i>📷</i>
+                    <p>暂无媒体内容</p>
                 </div>
+                <!-- 图片接口 -->
+                <img id="contentImage" src="20260301.jpg" alt="内容图片">
+            </div>
+            
+            <!-- 背景音乐 -->
+            <audio id="backgroundMusic" src="20260301.mp3" loop>
+                <p>您的浏览器不支持音频元素。</p>
+            </audio>
+            
+            <div class="content-body">
+                <p>今天是三月的第一天，即将面临开学</p>
                 
-                <p>如有任何疑问，欢迎随时联系我</p>
+                <p>开学是对感情的一次考验</p>
+                
+                <p>因为交流的时间变少了</p>
+                
+                <p>希望你一切都好，想你，爱你</p>
+                
+                <p>-竹苑llw</p>
+                
             </div>
             
             <div class="action-buttons">
                 <a href="welcome.html" class="btn">返回列表</a>
+                <button class="btn" onclick="toggleMusic()">🔊 音乐</button>
             </div>
         </div>
     </div>
+    
+    <script>
+        // 媒体管理功能
+        const contentSection = document.getElementById('contentSection');
+        const mediaContainer = document.getElementById('mediaContainer');
+        const mediaPlaceholder = document.getElementById('mediaPlaceholder');
+        const contentImage = document.getElementById('contentImage');
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        
+        // 初始状态检查
+        function checkMediaStatus() {
+            // 显示图片，隐藏占位符
+            contentImage.style.display = 'block';
+            mediaPlaceholder.style.display = 'none';
+            mediaContainer.style.display = 'block';
+            contentSection.classList.remove('no-media');
+        }
+        
+        // 页面加载时检查媒体状态
+        window.addEventListener('load', checkMediaStatus);
+        
+        // 背景音乐控制
+        function toggleMusic() {
+            if (backgroundMusic.paused) {
+                backgroundMusic.play();
+            } else {
+                backgroundMusic.pause();
+            }
+        }
+    </script>
 </body>
 </html>
